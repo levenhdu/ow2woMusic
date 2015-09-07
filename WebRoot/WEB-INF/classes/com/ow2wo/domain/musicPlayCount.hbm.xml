@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ow2wo.domain">
+	<class name="MusicPlayCount" table="musicPlayCount">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="mount" not-null="true"></property>
+		<many-to-one name="music" cascade="all"
+			unique="true" class="Music" column="musicId"/>
+		
+		
+	</class>
+</hibernate-mapping>

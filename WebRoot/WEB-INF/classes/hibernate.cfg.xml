@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<!-- 数据库连接设置 -->
+	<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property> 
+		<property name="connection.url">jdbc:mysql://localhost:3306/easyoa</property> 
+		<property name="connection.username">root</property> <property name="connection.password">liu67079</property> -->
+
+
+
+	<!-- Echo all executed SQL to stdout -->
+	<property name="show_sql">true</property>
+
+	<!-- Drop and re-create the database schema on startup -->
+	<property name="hbm2ddl.auto">update</property>
+
+	<property name="c3p0.acquire_increment">1</property>
+
+	<property name="c3p0.idle_test_period">100</property>
+	<!-- seconds -->
+
+	<property name="c3p0.max_size">5</property>
+
+	<property name="c3p0.max_statements">0</property>
+
+	<property name="c3p0.min_size">2</property>
+
+	<property name="c3p0.timeout">90</property><!-- seconds -->
+
+	<!-- <property name="hibernate.current_session_context_class">thread</property> -->
+	<!-- 	<mapping resource="com/leven/domain/role.hbm.xml" />
+		<mapping resource="com/leven/domain/department.hbm.xml" />
+		<mapping resource="com/leven/domain/user.hbm.xml" /> -->
+	<mapping resource="com/ow2wo/domain/album.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/favoriteMusic.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/music.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/musicDetail.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/musicLink.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/singer.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/user.hbm.xml" />
+	<mapping resource="com/ow2wo/domain/musicPlayCount.hbm.xml" />
+</session-factory>
+</hibernate-configuration>
+

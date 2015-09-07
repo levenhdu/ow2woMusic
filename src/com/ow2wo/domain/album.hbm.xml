@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ow2wo.domain">
+	<class name="Album" table="album">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="albumName"></property>
+		<property name="introduction"></property>
+		<property name="logoAddress"></property>
+		<property name="createTime"></property>
+		
+		
+		<!-- musicSet属性,本类与Music一对多 -->
+		<set name="musicSet"  order-by="id ASC" inverse="true">
+			<key column="albumId"></key>
+			<one-to-many class="Music"/>
+		</set>
+		
+		
+	</class>
+</hibernate-mapping>

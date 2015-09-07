@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ow2wo.domain">
+	<class name="FavoriteMusic" table="favoriteMusic">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<property name="FavoriteListName"></property>
+		
+		<many-to-one name="user" cascade="all"
+		 class="User" column="userId"/>
+			
+		<set name="musicSet" table="favoriteMusic_music">
+			<key column="favoriteMusicId"/>
+			<many-to-many column="musicId" class="Music"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

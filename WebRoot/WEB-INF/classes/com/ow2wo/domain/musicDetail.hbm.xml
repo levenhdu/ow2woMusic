@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ow2wo.domain">
+	<class name="MusicDetail" table="musicDetail">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="composer"></property>
+		<property name="lyricist"></property>
+		<property name="introduction"></property>
+		
+		<many-to-one name="music" cascade="all"
+			unique="true" class="Music" column="musicId"/>
+	
+	</class>
+</hibernate-mapping>

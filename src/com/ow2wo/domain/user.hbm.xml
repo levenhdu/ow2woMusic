@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ow2wo.domain">
+	<class name="User" table="user">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="userName"></property>
+		<property name="nickName"></property>
+		<property name="password"></property>
+		<property name="introduction"></property>
+		<property name="birthday"></property>
+		
+		<!-- 枚举映射  -->
+		<property name="gender">
+			<column name="gender" not-null="true"/>
+			<type name="org.hibernate.type.EnumType">
+			<param name="enumClass">com.ow2wo.util.enums.GenderEnum</param> 
+			<param name="type">12</param> 
+			</type> 
+		</property>
+		
+		<set name="favoriteMusic" inverse="true" >
+			<key column="userId"/>
+			<one-to-many class="FavoriteMusic"/>
+		</set>
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ow2wo.domain">
+	<class name="Singer" table="singer">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="singerName"></property>
+		<property name="age"></property>
+		<property name="introduction"></property>
+		
+		<!-- 枚举映射  -->
+		<property name="gender">
+			<column name="gender" not-null="true"/>
+			<type name="org.hibernate.type.EnumType">
+			<param name="enumClass">com.ow2wo.util.enums.GenderEnum</param> 
+			<param name="type">12</param> 
+			</type> 
+		</property>
+		
+		<!-- musicSet属性,本类与Music一对多 -->
+		<set name="musicSet"  order-by="id ASC">
+			<key column="singerId"></key>
+			<one-to-many class="Music"/>
+		</set>
+		
+		
+	</class>
+</hibernate-mapping>
