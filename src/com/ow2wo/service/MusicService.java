@@ -8,7 +8,7 @@ import com.ow2wo.util.enums.OrderEnum;
 
 public interface MusicService {
 	/*
-	 * 通过key主键来获取分页英语
+	 * 通过key主键来获取分页音乐
 	 */
 	PageModel<Music> findByPage(int pageNow,int pageSize,OrderEnum orderEnum,String key);
 	/*

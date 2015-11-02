@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test {
 	ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
 	
-	@org.junit.Test
+
 	public void SessionFactoryTest(){
 		SessionFactory sf=(SessionFactory) ac.getBean("sessionFactory");
 	

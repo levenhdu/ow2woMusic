@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ow2woMusic:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ow2woMusic_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ow2woMusic" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="ow2woMusic/web/Web" />
+    </root>
+  </artifact>
+</component>

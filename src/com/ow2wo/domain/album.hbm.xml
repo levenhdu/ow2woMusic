@@ -12,7 +12,7 @@
 		<property name="introduction"></property>
 		<property name="logoAddress"></property>
 		<property name="createTime"></property>
-		
+
 		
 		<!-- musicSet属性,本类与Music一对多 -->
 		<set name="musicSet"  order-by="id ASC" inverse="true">

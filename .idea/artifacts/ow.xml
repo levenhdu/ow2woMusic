@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ow">
+    <output-path>$PROJECT_DIR$/out/artifacts/ow</output-path>
+    <root id="archive" name="ow.jar">
+      <element id="artifact" artifact-name="ow2woMusic:war exploded" />
+    </root>
+  </artifact>
+</component>
